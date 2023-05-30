@@ -1,0 +1,9 @@
+This project would be a simple dictionary with some feature.
+This feature can be improved over time by those who are interested.
+
+Features are as below:
+* in this version we use files as storage 
+* a.txt b.txt ... z.txt 
+  each word based on it's first character should be added in an appropriate file.
+* if file does not exists , it should create it then.
+* search a word and return it's meaning 
