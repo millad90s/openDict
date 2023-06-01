@@ -1,0 +1,1 @@
+'airplane': ['craft', 'plane'],'book': ['reserve'],'city': ['town'],'city': ['town'],'city': ['town'],'city': ['town'],'city': ['town'],'city': ['town'],'city': ['town'],'city': ['town'],'phone': ['mobile'],
