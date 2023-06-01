@@ -7,3 +7,23 @@ Features are as below:
   each word based on it's first character should be added in an appropriate file.
 * if file does not exists , it should create it then.
 * search a word and return it's meaning 
+------------------------------------------------
+Formula for create Dictionary:
+{'key1': ['synonym1.1'],'key2': ['synonym2.1'],'key3': ['synonym3.1']}
+
+if Add synonym with key1 then:
+{'key1': ['synonym1.1','synonym1.2'],'key2': ['synonym2.1'],'key3': ['synonym3.1']}
+
+if Add third synonym with key1 then:
+{'key1': ['synonym1.1','synonym1.2','synonym1.3'],'key2': ['synonym2.1'],'key3': ['synonym3.1']}
+.
+.
+.
+And so on
+
+Example:
+{'airplane': ['craft'], 'alone': ['apart'], 'abuse': ['misapply']}
+
+if Add 'plane' synonym with key1 then:
+{'airplane': ['craft', 'plane'], 'alone': ['apart'], 'abuse': ['misapply']}
+
