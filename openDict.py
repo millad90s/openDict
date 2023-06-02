@@ -36,4 +36,4 @@ class OpenDict:
 # todo: delete words(key) if exists in my dictionary
 # def delete_word(dict, word)
 
-# todo: Implement through OOP
+# todo: different init based on database { file | postgresql )
