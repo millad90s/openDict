@@ -14,12 +14,17 @@ def add_word(dbdict, new_word, meaning):
         print("the key exists in db, let's update meaning")
         current_meaning = dbdict.get(new_word)
         current_meaning.append(meaning)
-        dbdict[new_word]=current_meaning
+        dbdict[new_word] = current_meaning
     # if it doesn't exist then let's add it in the meaning lists
     else:
         print("key does not exists in db, let's add it")
-        mydict[new_word]= [meaning]
+        mydict[new_word] = [meaning]
 
 
 # Todo: need a function to write changes into a file in filesystem
+# def save_to_file(path, filename, dict)
 
+# todo: delete words(key) if exists in my dictionary
+# def delete_word(dict, word)
+
+# todo: Implement through OOP
