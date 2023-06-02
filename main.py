@@ -1,10 +1,7 @@
 import openDict
 
+db_dict = openDict.OpenDict("a.txt")
+db_dict.show_data()
 
-db = {"Milad": ["reborn"]}
-nw = "Milad"
-mn = "son of sun"
-
-print(db)
-openDict.add_word(db, nw, mn)
-print(db)
+db_dict.add_word("m4", "e4")
+db_dict.show_data()
