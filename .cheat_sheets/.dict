@@ -1,0 +1,78 @@
+Certainly! Here's a cheat sheet for Python dictionaries that summarizes the most commonly used operations and methods:
+
+**Creating a Dictionary:**
+```python
+my_dict = {}                      # Empty dictionary
+my_dict = {"key1": "value1",      # Dictionary with initial key-value pairs
+           "key2": "value2",
+           "key3": "value3"}
+```
+
+**Accessing Values:**
+```python
+value = my_dict["key"]            # Access value by key
+value = my_dict.get("key")        # Access value using get() method
+```
+
+**Modifying and Adding Items:**
+```python
+my_dict["key"] = "new_value"      # Modify value for an existing key
+my_dict["new_key"] = "value"      # Add a new key-value pair
+```
+
+**Deleting Items:**
+```python
+del my_dict["key"]                # Delete item by key
+value = my_dict.pop("key")        # Delete item by key and get its value
+my_dict.popitem()                 # Delete an arbitrary item and get its key-value pair
+my_dict.clear()                   # Remove all items from the dictionary
+```
+
+**Checking Membership:**
+```python
+if "key" in my_dict:              # Check if a key exists in the dictionary
+    # Key exists
+```
+
+**Iterating Over Dictionary:**
+```python
+for key in my_dict:               # Iterate over keys
+    value = my_dict[key]          # Access value using the key
+```
+
+**Dictionary Views:**
+```python
+keys = my_dict.keys()             # Get a view object of keys
+values = my_dict.values()         # Get a view object of values
+items = my_dict.items()           # Get a view object of key-value pairs
+```
+
+**Length and Clearing:**
+```python
+length = len(my_dict)             # Get the number of items in the dictionary
+my_dict.clear()                   # Remove all items from the dictionary
+```
+
+
+- `clear()`: Removes all key-value pairs from the dictionary.
+- `copy()`: Creates a shallow copy of the dictionary.
+- `fromkeys(iterable, value)`: Creates a new dictionary with keys from the iterable and values set to the specified value.
+- `get(key, default)`: Returns the value associated with the specified key. If the key is not found, it returns the default value (or `None` if not specified).
+- `items()`: Returns a view object that contains the key-value pairs of the dictionary as tuples.
+- `keys()`: Returns a view object that contains the keys of the dictionary.
+- `pop(key, default)`: Removes the specified key and returns its associated value. If the key is not found, it returns the default value (or raises a `KeyError` if not specified).
+- `popitem()`: Removes and returns an arbitrary key-value pair from the dictionary as a tuple.
+- `setdefault(key, default)`: Returns the value associated with the specified key. If the key is not found, it inserts the key with the specified default value.
+- `update(other_dict)`: Updates the dictionary with key-value pairs from another dictionary or an iterable object.
+- `values()`: Returns a view object that contains the values of the dictionary.
+- `__contains__(key)`: Returns `True` if the dictionary contains the specified key, and `False` otherwise.
+- `__delitem__(key)`: Removes the item with the specified key from the dictionary.
+- `__eq__(other)`: Compares the dictionary with another object for equality.
+- `__getitem__(key)`: Returns the value associated with the specified key.
+- `__iter__()`: Returns an iterator that iterates over the keys of the dictionary.
+- `__len__()`: Returns the number of key-value pairs in the dictionary.
+- `__ne__(other)`: Compares the dictionary with another object for inequality.
+- `__repr__()`: Returns a string representation of the dictionary.
+- `__setitem__(key, value)`: Sets the value associated with the specified key.
+- `__sizeof__()`: Returns the size of the dictionary in bytes.
+
