@@ -13,7 +13,7 @@ class OpenDict:
         if not is_load_random:
             # load DB with random words and their meaning
             with open(filename, 'r') as file:
-                self.data = eval(file.read())
+                self.__data = eval(file.read())
         else:
             # Download required data
             nltk.download('wordnet')
@@ -27,7 +27,7 @@ class OpenDict:
                 self.add_word(random_word,meanings[0].definition())
 
     def show_data(self):
-        print(self.__data)
+        print(self.__data)  # should be improved
 
     def __save_data(self):
         with open(self.filename, 'w') as file:
@@ -52,8 +52,8 @@ class OpenDict:
 
     # delete a word from dictionary
     def delete_word(self, word):
-        if word in self.data.keys():
-            self.data.pop(word)
+        if word in self.__data.keys():
+            self.__data.pop(word)
             self.__save_data()
         return f"{word} does not exists in dictionary"
 
