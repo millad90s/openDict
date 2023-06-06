@@ -2,13 +2,15 @@ import nltk
 from nltk.corpus import words, wordnet
 import random
 from colorama import init, Fore, Back, Style
-
-init()
+import gtts, os
+from playsound import playsound
 
 
 class OpenDict:
     __data = {}
     filename = ""
+
+    __PATH = ".tmp/"
 
     def __init__(self, filename, is_load_random=False):
         self.filename = filename
@@ -67,20 +69,31 @@ class OpenDict:
         return f"{word} does not exists in dictionary"
 
     # a function to search a word in db and return its values
-    def search_data(self, my_word):
+    def search_data(self, my_word, audio):
         if my_word in self.__data.keys():
             print(Fore.LIGHTYELLOW_EX + 'Result search: ' + Fore.BLUE + my_word, ":", self.__data[my_word])
+            self.__play_word(my_word + " means " + self.__data[my_word][0]) if audio else None
         else:
             print(Fore.LIGHTRED_EX + f"There isn't {Fore.LIGHTYELLOW_EX} {my_word} {Fore.LIGHTRED_EX} in dictionary")
             # if a searched word, does not exist in db, then use a 3rd party app
             meaning = wordnet.synsets(my_word)
             self.add_word(my_word, meaning[0].definition())
+            self.__play_word(my_word + " means " + meaning[0].definition()) if audio else None
+
+    def __play_word(self, my_word):
+        my_tts = gtts.gTTS(my_word)
+        my_tts.save(self.__PATH + my_word)
+        playsound(self.__PATH + my_word)
+        os.remove(self.__PATH+my_word)
 
 # todo: different init based on database { file | postgresql )
 
+# todo: to get the meaning and add it to the database and also return to the user, /// Done
 
-#  to get the meaning and add it to the database and also return to the user
+# todo: we need the capability of speech in our application. /// Done :)
 
-# todo: we need the capability of speech in our application :)
+# todo: improve show_data function, /// Done
 
-# todo: improve show_data function
+# todo: implement API with request library
+
+# todo: handle errors
