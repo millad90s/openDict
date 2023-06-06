@@ -69,14 +69,16 @@ class OpenDict:
     # a function to search a word in db and return its values
     def search_data(self, my_word):
         if my_word in self.__data.keys():
-            print(Fore.LIGHTYELLOW_EX + 'Result search: '+Fore.BLUE + my_word, ":", self.__data[my_word])
+            print(Fore.LIGHTYELLOW_EX + 'Result search: ' + Fore.BLUE + my_word, ":", self.__data[my_word])
         else:
             print(Fore.LIGHTRED_EX + f"There isn't {Fore.LIGHTYELLOW_EX} {my_word} {Fore.LIGHTRED_EX} in dictionary")
+            # todo: if a searched word, does not exist in db, then use a 3rd party app
+            meaning = wordnet.synsets(my_word)
+            self.add_word(my_word, meaning[0].definition())
 
 # todo: different init based on database { file | postgresql )
 
 
-# todo: if a searched word, does not exist in db, then use a 3rd party app
 #  to get the meaning and add it to the database and also return to the user
 
 # todo: we need the capability of speech in our application :)
